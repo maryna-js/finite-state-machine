@@ -25,11 +25,11 @@ class FSM {
      */
     changeState(state) {
        
-        let stateVal = Object.keys(this.states);
+        let stateValue = Object.keys(this.states);
         for(var i = 0; i<stateVal.length; i++) {
-            if (stateVal[i] != state) {throw new Error('Error');}
+            if (stateValue[i] != state) {throw new Error('Error');}
         }
-        this.active = state;
+        this.stateNow = state;
         
     }
 
