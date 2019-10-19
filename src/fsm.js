@@ -8,7 +8,8 @@ class FSM {
         this.initial = config.initial;
         this.states = config.states;
         this.stateNow = config.initial;
-        this.history = [];
+        this.next = [];
+        this.prev = [];
     }
         
     /**
@@ -25,10 +26,11 @@ class FSM {
      */
     changeState(state) {
        
-        let stateValue = Object.keys(this.states);
-        for(var i = 0; i<stateVal.length; i++) {
-            if (stateValue[i] != state) {throw new Error('Error');}
+        if (!this.states[state]) {
+            throw new Error('Error');
         }
+        this.prev.push[this.stateNow];
+        this.next = [];
         this.stateNow = state;
         
     }
@@ -72,7 +74,8 @@ class FSM {
      * Clears transition history
      */
     clearHistory() {
-        this.active = 'normal';
+        this.prev = [];
+        this.next = [];
     }
 }
 
